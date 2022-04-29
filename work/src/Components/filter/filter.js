@@ -4,7 +4,7 @@ const Filter = () => {
         <h2 className="h4 mb-4">Filter</h2>
         <form action="#" id="filter">
           <div className="mb-3">
-            <label for="search" className="form-label">Search</label>
+            <label htmlFor="search" className="form-label">Search</label>
             <input type="search" className="form-control" id="search" placeholder="Falonchi" />
           </div>
           <div className="mb-3">
@@ -44,7 +44,7 @@ const Filter = () => {
           </div>
 
           <div className="mb-3">
-            <label for="sortby" className="form-label">Sort by</label>
+            <label htmlFor="sortby" className="form-label">Sort by</label>
             <select className="form-select" id="sortby">
               <option value="1">Name</option>
               <option value="2">Price: to lowest</option>

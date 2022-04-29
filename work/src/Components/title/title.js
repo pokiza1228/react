@@ -1,6 +1,0 @@
-const title = () => {
-    return (
-       true
-       
-    )
-}
