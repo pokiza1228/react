@@ -1,4 +1,6 @@
 import { createElement } from "react";
+import BenifitsItem from "../benifits/benifits";
+import { products } from "../../data";
 
 const Item = (props) => {
 const  { id, title, img, price, birthDate, sizes, isFavorite, features } = props;
@@ -12,13 +14,7 @@ const showDate = function(dateString) {
 }
 const size = `${sizes.width}smx${sizes.height}sm`
 let benifitsArray=features.split(",")
-let li = benifitsArray.forEach((item)=>{
-        const itemLi=document.createElement("li")
-        itemLi.className="badge bg-primary me-1 mb-1"
-        itemLi.textContent=item
 
-        return itemLi
-})
     return (
         <li className="col-6">
         <div className="card">
@@ -26,7 +22,7 @@ let li = benifitsArray.forEach((item)=>{
         <div className="card-body">
             <h3 className="card-title parrot-title">{title}</h3>
             <p className="card-text fw-bold parrot-price"><mark>${price}</mark></p>
-            <p className="badge bg-success parrot-size" style={{color:"black" }}>{size}</p>
+            <p className="badge bg-success parrot-size" >{size}</p>
 
             <p className="card-text parrot-birthday">
                 {
@@ -35,7 +31,8 @@ let li = benifitsArray.forEach((item)=>{
             </p>
 
             <ul className="d-flex flex-wrap list-unstyled features-list">
-            {li}
+            
+                 <li className="badge bg-primary me-1 mb-1">{benifitsArray}</li>
             
             </ul>
 

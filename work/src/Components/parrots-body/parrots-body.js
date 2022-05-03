@@ -1,6 +1,6 @@
 import Item from "../parrots/parrots-item";
 import { products } from "../../data";
-const ParrotsBody = () => {
+ const ParrotsBody = () => {
    return (<>
    <    section className="col-6">
             <div className="d-flex justify-content-between align-items-baseline">
