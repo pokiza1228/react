@@ -16,7 +16,7 @@ const ParrotsBody = () => {
                 id={parrots.id}
                 img={parrots.img}
                 birthDate={parrots.birthDate}
-                sizes={parrots.sizes}
+               
                 isFavorite={parrots.isFavorite}
                 features={parrots.features}
                 />)

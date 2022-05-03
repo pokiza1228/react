@@ -9,6 +9,7 @@ const showDate = function(dateString) {
     const date = new Date(dateString); 
     return   `${addZero(date.getDate())}.${addZero(date.getMonth() + 1)}.${date.getFullYear()}`
 }
+
     return (
         <li className="col-6">
         <div className="card">
@@ -16,7 +17,7 @@ const showDate = function(dateString) {
         <div className="card-body">
             <h3 className="card-title parrot-title">{title}</h3>
             <p className="card-text fw-bold parrot-price"><mark>${price}</mark></p>
-            <p className="badge bg-success parrot-size">{sizes.width}sm x {sizes.height}sm</p>
+            <p className="badge bg-success parrot-size">99</p>
 
             <p className="card-text parrot-birthday">
                 {
@@ -32,11 +33,11 @@ const showDate = function(dateString) {
 
             <div className="position-absolute top-0 end-0 d-flex">
             {/* <!-- Agar isFavorite false bo'ladigan bo'lsa i'ning classNamei "fa-solid fa-star" bo'lishi kerak. Agar unday bo'lmasa "fa fa-star-o" --> */}
-            <button className="btn rounded-0 btn-success star-btn"><i className="fa fa-star-o parrot-star" style={{color: "yellow"}}></i></button>
+            <button className="btn rounded-0 btn-success star-btn"><i className={isFavorite ? "fa fa-star-o parrot-star": "fa-solid fa-star parrot-star"} style={{color: "yellow"}}></i></button>
             <button className="btn rounded-0 btn-secondary edit-btn"
             data-bs-toggle="modal" data-bs-target="#edit-parrot-modal"
         ><i className="fa-solid fa-pen"  style={{pointerEvents: "none"}}></i></button>
-            <button className="btn rounded-0 btn-danger delet-btn"><i className="fa-solid fa-trash" style={{pointerEvents: "none"}}></i></button>
+            <button className="btn rounded-0 btn-danger delet-btn"><i className={"fa-solid fa-trash"} style={{pointerEvents: "none"}}></i></button>
             </div>
         </div>
         </div>

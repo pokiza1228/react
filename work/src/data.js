@@ -9,7 +9,7 @@ export const products = [
         width: 184,
         height: 50
       },
-      isFavorite: false,
+      isFavorite: true,
       features: "Beautiful,Tame,Can speak"
     },
     {
