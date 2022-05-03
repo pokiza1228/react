@@ -1,3 +1,4 @@
+import { createElement } from "react";
 
 const Item = (props) => {
 const  { id, title, img, price, birthDate, sizes, isFavorite, features } = props;
@@ -9,7 +10,15 @@ const showDate = function(dateString) {
     const date = new Date(dateString); 
     return   `${addZero(date.getDate())}.${addZero(date.getMonth() + 1)}.${date.getFullYear()}`
 }
+const size = `${sizes.width}smx${sizes.height}sm`
+let benifitsArray=features.split(",")
+let li = benifitsArray.forEach((item)=>{
+        const itemLi=document.createElement("li")
+        itemLi.className="badge bg-primary me-1 mb-1"
+        itemLi.textContent=item
 
+        return itemLi
+})
     return (
         <li className="col-6">
         <div className="card">
@@ -17,7 +26,7 @@ const showDate = function(dateString) {
         <div className="card-body">
             <h3 className="card-title parrot-title">{title}</h3>
             <p className="card-text fw-bold parrot-price"><mark>${price}</mark></p>
-            <p className="badge bg-success parrot-size">99</p>
+            <p className="badge bg-success parrot-size" style={{color:"black" }}>{size}</p>
 
             <p className="card-text parrot-birthday">
                 {
@@ -26,9 +35,8 @@ const showDate = function(dateString) {
             </p>
 
             <ul className="d-flex flex-wrap list-unstyled features-list">
-            {/* <!-- <li className="badge bg-primary me-1 mb-1">Beautiful</li>
-            <li className="badge bg-primary me-1 mb-1">Tame</li>
-            <li className="badge bg-primary me-1 mb-1">Can speak</li> --> */}
+            {li}
+            
             </ul>
 
             <div className="position-absolute top-0 end-0 d-flex">
