@@ -1,14 +1,28 @@
-const Item = () => {
+
+const Item = (props) => {
+const  { id, title, img, price, birthDate, sizes, isFavorite, features } = props;
+
+const addZero = function(number) {
+    return number < 10 ? "0" + number : number;
+}
+const showDate = function(dateString) {
+    const date = new Date(dateString); 
+    return   `${addZero(date.getDate())}.${addZero(date.getMonth() + 1)}.${date.getFullYear()}`
+}
     return (
         <li className="col-6">
         <div className="card">
-        <img src="https://media.istockphoto.com/photos/parrot-hyacinth-macaw-picture-id1359443019?b=1&k=20&m=1359443019&s=170667a&w=0&h=dteRZ9bM7sEvBbFE9it1r9O7IxlILXb1UnSoLNEVMAg=" alt="" className="card-img-top" />
+        <img src={img} alt={title} className="card-img-top" />
         <div className="card-body">
-            <h3 className="card-title parrot-title">Hyacinth macaw</h3>
-            <p className="card-text fw-bold parrot-price"><mark>$5000</mark></p>
-            <p className="badge bg-success parrot-size">184sm x 50sm</p>
+            <h3 className="card-title parrot-title">{title}</h3>
+            <p className="card-text fw-bold parrot-price"><mark>${price}</mark></p>
+            <p className="badge bg-success parrot-size">{sizes.width}sm x {sizes.height}sm</p>
 
-            <p className="card-text parrot-birthday">12.05.2022</p>
+            <p className="card-text parrot-birthday">
+                {
+                   showDate(birthDate)
+                }
+            </p>
 
             <ul className="d-flex flex-wrap list-unstyled features-list">
             {/* <!-- <li className="badge bg-primary me-1 mb-1">Beautiful</li>
