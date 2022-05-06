@@ -31,8 +31,10 @@ let benifitsArray=features.split(",")
             </p>
 
             <ul className="d-flex flex-wrap list-unstyled features-list">
-            
-                 <li className="badge bg-primary me-1 mb-1">{benifitsArray}</li>
+            {
+                benifitsArray.map((benif)=><li className="badge bg-primary me-1 mb-1">{benif}</li>)
+            }
+                 
             
             </ul>
 
